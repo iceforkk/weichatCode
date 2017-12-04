@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="Css/signup-form.css" type="text/css" />
+<link rel="stylesheet" href="Css/registration_page.css" type="text/css" />
+</head>
+
+<body>
+
+	<div class="container" style="background-color: #fff;">
+    <img src="img/bm.png" class="img-responsive" alt="Cinque Terre">
+    <h4 class="text-center" style="margin-top: 30px;margin-bottom: 10px">"钱塘股潮"揭幕者2016首届嘉年华</h4>
+       <div class="panel-body">
+       	  <div class="alert alert-info" id="message" style="display:none;"></div>        
+       	  <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                <input name="name" id="username" type="text" class="form-control" placeholder="姓名" style="height: 44px;">
+            </div>
+            <span class="help-block" id="error"></span>
+          </div>       
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></div>
+              <input name="phone" id="userphone" type="text" class="form-control" placeholder="手机" style="height: 44px;">
+            </div> 
+            <span class="help-block" id="error"></span>                     
+          </div>        
+          <div class="row">     
+            <div class="form-group col-lg-6">
+              <div class="input-group">
+              <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+              <input name="code" id="code" type="text" class="form-control" placeholder="验证码" style="float-left;width:50%; height: 44px;">
+              <input class="btn btn-default" type="button" id="btn" style="float-left;width:50%; background-color: #45b6ff;color: #fff;height:38px;border-radius: 0; height: 44px;" value="获取验证码" onclick="settime(this)">
+              </div>  
+              <span class="help-block" id="error"></span>                    
+            </div>                     
+          </div>   
+        </div>
+        <div class="btn-group btn-group-lg navbar-fixed-bottom">
+           <button type="button" class="btn btn-default" style="width: 100%;border-radius: 0;background-color: #f18450;color: #fff;" onclick="saveuserbyphone()">下一步</button>
+        </div>
+	</div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.validate.min.js"></script> 
+<script src="js/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/register.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/weixin.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>一富财经网——code跳转页</title>
+</head>
+<style>
+.aa{text-align: center;font-size: 3.5rem;margin-top:12rem;font-family:"微软雅黑"}
+</style>
+<body>
+<h3 class="aa">微信授权中，请耐心等待</h3>
+</body>
+<script src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		 
+		//微信code
+		var code = getQueryString('code');
+		//跳转链接
+		var state = getQueryString('state');
+
+		var box = $('h1');
+
+		if (code) {
+			//请求服务端
+			box.text("正在处理...请稍后!");
+
+             $.ajax({ 
+             type: "GET",
+             url: "http://wxapi.yifucj.com/api/ActivityApply/OpenId", 
+             data:{code:code},
+             dataType: 'json',   
+             success: function (data){
+             	box.text("处理完成...等待跳转!");
+             		if (data.error > 0) {
+					alert(data.message);
+				} else {
+				  if(data.data) {
+						//存储openid，登陆使用
+						localStorage.setItem("openid", data.data);
+						//setExpire("openid", -1);
+						 window.location.href="Index.html";
+					} else {
+						alert("error data");
+					}
+				}
+              }
+            }).always(function() {
+				var toLink = location.origin + location.pathname.replace('code.html', "");
+				box.html("跳转中...,如无法跳转，请<a href='" + toLink + "'>点击</a>");
+				location.replace(toLink);
+			});;
+
+
+			// $.get(API_URL, {code: code}).then(function(resp) {
+			// 	box.text("处理完成...等待跳转!");
+			
+			// }, function(xhr, status, message) {
+			// 	box.text("处理失败...等待跳转!");
+			// 	alert(message);
+			// }).always(function() {
+			// 	var toLink = location.origin + location.pathname.replace('code.html', "") + decodeURIComponent(state);
+			// 	box.html("跳转中...,如无法跳转，请<a href='" + toLink + "'>点击</a>");
+			// 	location.replace(toLink);
+			// });
+		}
+
+		//获取url params
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+			var r = window.location.search.substr(1).match(reg);
+			if (r!=null) return (r[2]); return null;
+		};
+
+		// 设置缓存有效期
+		// function setExpire(key, expire){
+		// 	var data = localStorage.getItem("YF_CACHE_EXPIRE");
+		// 	data = data ? JSON.parse(data) : {};
+		// 	data[key] = expire === -1 ? expire : new Date().getTime() + expire * 1000;
+		// 	localStorage.setItem("YF_CACHE_EXPIRE", JSON.stringify(data));
+		// }
+	});
+</script>
+</html>

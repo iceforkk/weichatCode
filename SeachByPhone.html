@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="Css/signup-form.css" type="text/css" />
+<link rel="stylesheet" href="Css/registration_page.css" type="text/css" />
+</head>
+
+<body>
+  <div class="container" style="background-color: #fff;">
+    <img src="img/bm.png" class="img-responsive" alt="Cinque Terre">
+    <h4 class="text-left" style="margin-top: 20px;margin-left: 15px;">
+      请输入您报名时预留的手机号
+    </h4>
+    <div class="panel-body">
+      <div class="alert alert-info" id="message" style="display:none;"></div>        
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></div>
+          <input name="useraech" id="useraech" type="text" class="form-control" placeholder="手机号" style="height: 44px;">
+        </div> 
+        <span class="help-block" id="error"></span>                     
+      </div>        
+    </div>
+    <div class="btn-group btn-group-lg navbar-fixed-bottom">
+       <button type="submit" class="btn btn-default" style="width: 100%;border-radius: 0;background-color: #f18450;color: #fff;" onclick="gotoseach()">提交</button>
+    </div>
+  </div>
+
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.validate.min.js"></script> 
+<script src="js/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/register.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/weixin.js"></script>
+</body>
+</html>

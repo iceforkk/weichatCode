@@ -1,0 +1,36 @@
+.container{
+  padding:0;
+}
+p,li{
+  color: #666;
+  font-size: 1.6rem;
+  margin:0 0 5px;
+  letter-spacing:0.01rem;
+  font-family: "微软雅黑"
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: "微软雅黑"
+}
+.yf-text-indent{
+  text-indent: 2.4rem;
+}
+.yf-text_color{
+  color: #f18450
+}
+.btn-default{
+  background-color: #f18450;
+  color: #fff;
+  font-family: "微软雅黑"
+}
+.yf-dash{width:100%;height:1px;border-bottom:1px dotted #ccc;margin-top:20px;}
+.yf-text-14{
+  font-size: 1.4rem;
+}
+.yf-dagou{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/dagou.png) no-repeat;
+}
